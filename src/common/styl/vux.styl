@@ -1,0 +1,87 @@
+rem($px){
+  $px/37.5/2rem
+}
+
+.flexHeight{
+  height 100%;
+  display flex
+  flex-direction column
+  flex:1;
+  background #f8f8f8
+}
+
+// 信息toast弹出框
+.vux-toast{
+    
+}
+// toast
+.vux-toast{
+  .weui-toast.weui-toast_text{
+    max-width 35em!important
+    width auto!important
+  }
+  .weui-toast_text .weui-toast__content{
+        line-height rem(40)
+        word-break break-all
+        padding:rem(20)!important
+  }
+}
+
+// 弹出加载框
+.weui-loading_toast.vux-loading{
+  .weui-mask_transparent
+  .weui-toast{
+    display flex
+    align-items center
+    flex-direction column
+    justify-content center
+    width rem(200)!important
+    height rem(200)!important
+    top:rem(320)!important
+    min-height rem(200)!important
+  }
+  .weui-loading.weui-icon_toast{
+    margin:0!important
+    width rem(60)!important
+    height rem(60)!important
+  }
+  .weui-toast__content{
+    margin: rem(27) 0 0 0!important
+    font-size:rem(28)!important
+  }
+}
+
+// confirm确认框
+.vux-confirm .vux-x-dialog .weui-dialog .weui-dialog__bd{
+    display flex
+    justify-content center
+    align-items: flex-end
+}
+
+rem($px){
+  $px/37.5/2rem
+}
+// 空状态
+.emptyStatus{
+    flex:1;
+    height 100%
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    position relative
+    z-index 1
+    .img{
+        background-repeat no-repeat
+        background-position rem(20) center
+        background-size contain
+        display inline-flex
+        width rem(444)
+        height rem(374)
+        margin-left:rem(30)
+    }
+    .text{
+        font-size:rem(28)
+        color:#999
+    }
+}

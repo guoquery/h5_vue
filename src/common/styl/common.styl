@@ -1,0 +1,168 @@
+
+$url='http://m.weimoke.com/member/static/'
+
+$designWidth=750
+
+.icon {
+  /* 通过设置 font-size 来改变图标大小 */
+  width:100%;
+  height 100%;
+  /* 图标和文字相邻时，垂直对齐 */
+  vertical-align: -0.15em;
+  /* 通过设置 color 来改变 SVG 的颜色/fill */
+  fill: currentColor;
+  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+     normalize.css 中也包含这行 */
+  overflow: hidden;
+}
+
+//$url ='http://weimaqi.oss-cn-shenzhen.aliyuncs.com/share/img/'
+
+input,textarea{
+  &:focus{
+    &::-webkit-input-placeholder{
+      color:rgba(0,0,0,0)!important
+    }
+    &::-moz-placeholder{
+      color:rgba(0,0,0,0)!important
+    }
+    &:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+      color:rgba(0,0,0,0)!important
+    }
+    &:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+      color:rgba(0,0,0,0)!important
+    }
+  }
+}
+
+
+img[src=""]{
+  display none
+}
+
+*{
+  box-sizing border-box;
+}
+
+input, button, select, textarea {
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+/**
+* Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+* http://cssreset.com
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font-weight: normal
+  vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section
+  display: block
+
+body
+  line-height: 1
+  font-family: -apple-system-font,Helvetica Neue,sans-serif
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+  content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+/* custom */
+
+a
+  color: #7e8c8d
+  -webkit-backface-visibility: hidden
+  text-decoration: none
+
+li
+  list-style: none
+
+body
+  -webkit-text-size-adjust: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+em
+  font-style normal
+  display inline-block
+
+html{
+   height 100%
+ }
+body{
+  height 100%
+}
+#app{
+  height 100%
+}
+
+
+
+
+/*页面过度效果渐入渐出*/
+.slide-fade{
+  position: absolute;left:0;right: 0;
+}
+.slide-fade-enter-active {
+  transition: all 0.5s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.35s cubic-bezier(2.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+{
+  left:0;right: 0;
+  transform: translateX(50px);
+  opacity: 0;
+}
+.waves-effect{
+  display block
+}
+#container .amap-ui-misc-positionpicker{
+  display none
+}
+rem($px){
+  $px/37.5/2rem
+}
+ .fixed{
+  position fixed
+  top:0;
+  left:0;
+  right:0;
+  z-index 222;
+  width 0;
+  bottom:0;
+  padding:0 !important;
+  margin: 0 !important;
+  >div{
+    width rem(750)
+    height 100%
+    background #f8f8f8;
+    position relative
+  }
+}

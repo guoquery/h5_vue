@@ -1,0 +1,60 @@
+//$url = 'http://weimaqi.oss-cn-shenzhen.aliyuncs.com/share/img/'
+$url='http://m.weimoke.com/member/static/img/'
+//$url = 'http://192.168.1.173:8888/static/img/'
+$designWidth=750
+rem($px){
+  $px/37.5/2rem
+}
+font($fontSize){
+  line-height:rem($fontSize + 2)
+  font-size:rem($fontSize)
+  vertical-align bottom
+}
+bg($path){
+  background url($path) no-repeat center center;
+  background-size contain
+}
+bgUrl($path){
+  background url($url $path) no-repeat center center;
+  background-size contain
+}
+flex-d() {
+  display flex
+  flex-direction column
+}
+flex-aj(){
+  display flex
+  align-items center
+  justify-content center
+}
+flex-j(){
+  display flex
+  justify-content center
+}
+
+flex-a(){
+  display flex
+  align-items center
+}
+
+flex-lr(){
+  display flex
+  justify-content space-between
+}
+
+icon($width,$height){
+  display inline-block
+  width  rem($width)
+  height rem($height)
+}
+
+textover(){
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+}
+$color=#009eff;
+$color2=#040c10;
+$color3=#ccc;
+$cor = #3e45f5
+$tcolor = #ff7148

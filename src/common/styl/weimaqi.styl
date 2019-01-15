@@ -1,0 +1,870 @@
+//$url = 'http://weimaqi.oss-cn-shenzhen.aliyuncs.com/share/img/'
+$url='http://m.weimoke.com/member/static/img/'
+//$url = 'http://192.168.1.173:8888/static/img/'
+$designWidth=750
+rem($px){
+  $px/37.5/2rem
+}
+
+font($fontSize){
+  line-height:rem($fontSize + 2)
+  font-size:rem($fontSize)
+  vertical-align bottom
+}
+bg($path){
+  background url($path) no-repeat center center;
+  background-size contain
+}
+bgUrl($path){
+  background url($url $path) no-repeat center center;
+  background-size contain
+}
+flex-aj(){
+  display flex
+  align-items center
+  justify-content center
+}
+flex-j(){
+  display flex
+  justify-content center
+}
+
+flex-a(){
+  display flex
+  align-items center
+}
+
+flex-lr(){
+  display flex
+  justify-content space-between
+}
+
+
+icon($width,$height){
+  display inline-block
+  width  rem($width)
+  height rem($height)
+}
+
+textover(){
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+}
+$color=#009eff;
+$color2=#040c10;
+$color3=#ccc;
+
+
+.hjw-simple-ul{
+  width 100%;
+  &.white{
+    >li{
+      background #fff
+    }
+  }
+  &.whiteBg{
+    padding:0 rem(30)
+    >li{
+      padding:0;
+      >div{
+        background #fff
+        padding:0 rem(30)
+        border-radius rem(20)
+        margin-top: rem(20)
+        border:0;
+        .simple-right{
+          >span{
+            color:#f53e54
+          }
+        }
+      }
+    }
+  }
+  &.resultBg{
+    >li{
+      >div{
+        .simple-right{
+          >span{
+            color:#f53e54
+          }
+        }
+      }
+    }
+  }
+  &.borderBg{
+    >li:last-child{
+      >div{
+        border-bottom:rem(2) solid #e7e7e7
+      }
+    }
+  }
+  li{
+    background none
+    padding:0 rem(30)
+    position relative
+    &.simple-grey{
+      background #f2f2f2
+    }
+    &.err{
+      >div>.simple-right{
+        >em{
+          text-decoration line-through
+        }
+      }
+    }
+    &:last-child{
+      >div{
+        border:0;
+      }
+    }
+    >div{
+      overflow hidden
+      border-bottom:rem(2) solid #e7e7e7
+      display flex;
+    // padding-right:rem(30)
+      height rem(150)
+      align-items center
+      justify-content space-between
+      &.simple-pos{
+        position absolute
+        top:0;
+        right:0;
+        bottom:0;
+        left 0;
+      }
+    }
+  }
+  .simple-img{
+    flex:0 0 rem(90)
+    margin-right rem(20)
+    height rem(90)
+    flex-aj()
+    box-shadow: 0px rem(2) rem(6) 0px #f7f7f7;
+    img{
+      width rem(64)
+      height rem(64)
+    }
+  }
+  .simple-left{
+    display flex
+    flex-direction column
+    flex:1;
+    width 1px;
+    >em{
+      color:#333;
+      font-size:rem(28)
+      line-height rem(32)
+      height rem(32)
+      textover()
+      margin-bottom:rem(16)
+      width 100%;
+      padding-right:rem(15)
+    }
+    >span{
+      color:#999;
+      font-size:rem(24)
+      height:rem(24)
+      line-height rem(24)
+    }
+  }
+  .simple-right{
+    display flex
+    flex-direction column
+    >em{
+      color:#333;
+      line-height rem(32)
+      font-size rem(32)
+      height rem(32)
+      font-weight bold
+      text-align right;
+      &.add{color:#ff6600}
+      &.delect{color:#333}
+      &.error{
+        text-decoration:line-through
+      }
+    }
+    >span{
+      text-align right;
+      margin-top:rem(20)
+      font(20)
+    }
+  }
+}
+
+
+
+/**方格布局*/
+.grid-Content{
+//padding:13px 0;
+  width 100%
+  overflow auto
+  padding:0 rem(10)
+  &.layout2{
+    flex:1;
+  }
+  .grid-ul{
+    display flex
+    flex-wrap wrap
+  //margin-bottom:96px;
+    &.show{
+      margin 0;
+    }
+    &.grid-bg{
+      >li.active .grid-div{
+        background $color
+        color:#fff;
+        border:rem(2) solid $color
+        box-shadow: 0px rem(5) rem(10) 0px rgba(0, 153, 255, 0.2);
+        .grid-price{
+          color:#fff;
+
+        }
+        .grid-warn{
+          color:#fff;
+        }
+      }
+    }
+    li{
+      flex:0 0 33.3%;
+      padding:rem(10)
+      height rem(226.5)
+      overflow hidden
+      position relative
+      &.active{
+        .grid-div{border:rem(4) solid #009eff;}
+      }
+      &.disable{
+        .grid-text p,.grid-text span{
+          color:#ccc;
+        }
+        .grid-empty{display:flex;}
+      }
+      .grid-div{
+        padding:0 rem(10)
+        height 100%
+        border:rem(2) solid #e4e4e4;
+        box-shadow: 0px rem(5) rem(10) 0px rgba(204, 204, 204, 0.2);
+        border-radius rem(20)
+        transition all 0.15s linear;
+        display flex
+        align-items center
+        justify-content center
+        position relative
+        overflow hidden
+      }
+      .grid-text{
+        text-align left
+        display: flex;
+        flex-direction: column;
+        max-width 100%;
+        p{
+          line-height rem(30)
+          font-size rem(26)
+          height rem(30)
+          margin:rem(10) 0
+          display inline-block
+          textover()
+          transition none
+        }
+        p:nth-child(2){
+          height rem(30)
+          
+          text-align center
+        }
+        p:nth-child(3){
+          height rem(30)
+          
+          text-align center
+        }
+        span{
+          line-height rem(26)
+          font-size rem(26)
+          display inline-block
+        }
+        .grid-warn{
+          color: #cccccc
+          font-size:rem(22)
+          margin:rem(10) 0
+          line-height rem(22)
+        }
+      }
+      .grid-price{
+        color: #009eff
+        transition all 0.15s linear;
+        font-family:number-webfont;
+      }
+      .grid-special{
+        icon(78,78)
+        position absolute
+        z-index 15
+        top: rem(10);
+        right : rem(10)
+        flex-aj();
+        line-height rem(20)
+        font-size rem(20)
+        color:#fff;
+        >span{
+          transform rotateZ(45deg)
+          margin-bottom: rem(16)
+          margin-left: rem(20)
+        }
+        &.limit{
+          bgUrl('layout/prefer_red.svg')
+          color:#fff;
+        }
+        &.recommend{
+          bgUrl('layout/prefer_yellow.svg')
+          color:#97480f;
+        }
+      }
+      .grid-empty{
+        position absolute
+        top:0;
+        left 0;
+        bottom:0;
+        right:0;
+        justify-content center
+        align-items center
+        display none
+        >span{
+          width rem(100)
+          height rem(100)
+          background rgba(51,51,51,0.6)
+          justify-content center
+          align-items center
+          display flex
+          color:#fff;
+          font-size rem(24)
+          border-radius 50%
+        }
+      }
+      .grid-impor{
+        position absolute
+        z-index 3;
+        bottom:0;
+        left:0;
+        right:0;
+        height:rem(83)
+        bgUrl('personal/wavesBg.png');
+        background-position-y bottom;
+        display flex;
+        align-items flex-end
+        padding-bottom:rem(13)
+        justify-content center;
+        color:#fff;
+        font(24)
+      }
+    }
+  }
+}
+
+// 暂于停车位的个人中心
+.radiust-list{
+  // padding:0 rem(40)
+  >p{
+    font(30)
+    color:#333;
+    font-weight bold
+    padding:rem(30) 0 rem(10) rem(30)
+  }
+  >ul{
+    overflow hidden
+    // box-shadow: 0px 10px 31px 0px rgba(122, 122, 122, 0.1);
+    &:last-child{
+      margin:0;
+    }
+    >li{
+      height rem(88)
+      padding:0 rem(40)
+      flex-a()
+      &:last-child{
+        >div{
+          border:0;
+        }
+      }
+      >div{
+        height 100%
+        border-bottom:rem(2) solid #eee;
+        flex-a()
+        width:100%;
+        >span{
+          icon(44, 44)
+          flex:0 0 rem(44)
+        }
+        >em{
+          padding:0 rem(20)
+          textover()
+          color:#333;
+          font(30)
+          line-height rem(38)
+          flex:1;
+          font-weight bold
+        }
+        >i{
+          flex:0 0 rem(14)
+          icon(14, 24)
+          bgUrl('layout/arrowRight.svg')
+        }
+      }
+    }
+  }
+}
+
+
+/*右边箭头或者文字的左右布局，宽度100%*/
+.list-div{
+  .list-ul{
+    margin-bottom:rem(19)
+    li{
+      padding-left:rem(30)
+      background #fff
+      width 100%
+      &:last-child>div{
+        border:none;
+      }
+    //&:active{
+    //  background #f2f2f2
+    //  input{
+    //    background #f2f2f2
+    //  }
+    //}
+      >div{
+        display flex
+        height:rem(100)
+        justify-content space-between
+        align-items center
+        width 100%;
+        padding-right:rem(30)
+        border-bottom:rem(2) solid #f2f2f2
+      }
+    }
+  }
+  li.level{
+    .list-right>em{
+      display inline-flex
+      width rem(82)
+      height rem(34)
+      align-items center
+      justify-content center
+      color:#f7f7f7;
+      font(20)
+      background #ffcc33
+      border-radius rem(17)
+      padding-left rem(2)
+    }
+  }
+  li.id{
+    .list-right>.clone{
+      width rem(102)
+      height rem(54)
+      padding:rem(10) rem(0) rem(10) rem(10)
+      margin:0;
+      margin-bottom:rem(4)
+      >span{
+        display inline-flex
+        width 100%;
+        height 100%
+        align-items center
+        justify-content center
+        border:rem(2) solid #999;
+        border-radius rem(17)
+        font(20)
+        color:#999
+        margin:0;
+      }
+    }
+  }
+  .list-text{
+    color:#333;
+    font-size:rem(30)
+    line-height rem(30)
+    height rem(30)
+    font-weight bold
+  }
+  .list-right{
+    display flex
+    align-items center
+    justify-content flex-end
+    padding-left rem(25)
+    flex:1
+    height 100%;
+    .list-img{
+      width rem(66)
+      height rem(66)
+      overflow hidden
+      border-radius 50%
+      background #e0e0e0
+      >img{
+        width 100%;
+        height 100%;
+      }
+    }
+    em{
+      color:#999;
+      font(26)
+      &.overdue-text{
+        text-decoration line-through
+      }
+      &.overdue-color{
+        color:#0099ff;
+      }
+    }
+    span{
+      height:rem(28)
+      width rem(16)
+      display inline-block
+      background-size contain
+      margin-left:rem(20)
+    }
+    input{
+      width 100%;
+      color:#999;
+      font-size:rem(26)
+      text-align right
+      height 100%;
+    }
+    input::-webkit-input-placeholder{
+            color:#999;
+            font-size:rem(26)
+          }
+  }
+}
+
+/*个人中心横条布局*/
+.groups1{
+  >ul{
+    >li{
+      height:rem(110);
+      padding:0 rem(30)
+      background #fff;
+      &:last-child{
+        >div{
+          border:0;
+        }
+      }
+      >div{
+        display flex
+        justify-content space-between
+        align-items center
+        height 100%;
+        border-bottom:rem(1) solid #e7e7e7
+        >.groups1_left{
+          display flex
+          align-items center
+          >span{
+            icon(30,34)
+            margin-right rem(20)
+            background-position center
+            background-repeat no-repeat
+            background-size contain
+          }
+          >em{
+            color:#333;
+            font(30)
+            font-weight bold
+          }
+        }
+        >.groups1_right{
+          flex-a()
+          >i{
+            icon(22, 32)
+            display inline-flex
+          //bgUrl('personal/arrowRight.svg')
+          }
+          >em{
+            margin-right rem(15)
+            font(26)
+            color:#3e45f5
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 选择问题
+.weui-cells.vux-no-group-title{
+  margin:0!important;
+  &:before, &:after{
+    display none
+  }
+  .vux-no-group-title {
+    width 100%;
+    height 100%;
+    margin: 0;
+  }
+  .vux-cell-box{
+    height 100%
+  }
+  .weui-cell.vux-tap-active.weui-cell_access{
+    height 100%
+    padding-left:0;
+    padding-right:0;
+    flex-a()
+    font-size:rem(30)
+  }
+  .weui-cell__hd{
+    >label{
+      font(30)
+      color:#333
+      font-weight bold
+    }
+  }
+  .vux-popup-picker-placeholder.vux-cell-placeholder{
+    margin-right rem(15)
+    font-size:rem(26)
+    color:#999;
+  }
+  .vux-popup-picker-value.vux-cell-value{
+    margin-right rem(15)
+  }
+  .vux-cell-primary.vux-popup-picker-select-box{
+    .vux-popup-picker-select{
+      flex-a()
+      justify-content flex-end
+    }
+  }
+  .weui-cell__ft{
+    width rem(11)
+    height rem(22)
+    margin-left:rem(6)
+    border:none;
+    bgUrl('personal/arMore.svg')
+    transform none
+  }
+  .weui-cell_access .weui-cell__ft:after{
+    display none
+  }
+}
+.vux-popup-dialog.vux-popup-picker{
+  .vux-popup-header.vux-1px-b{
+    height rem(88)
+    line-height rem(88)
+    font-size rem(32)
+  }
+  .scroller-component{
+    height:rem(478)
+  }
+  .scroller-indicator{
+    top:rem(204)
+    height:rem(68)
+  }
+  .scroller-mask{
+    background-size 100% rem(204)
+  }
+  .scroller-content{
+    top:rem(0)
+  }
+  .scroller-item{
+    height rem(68)
+    line-height rem(68)
+    font-size:rem(32)
+  }
+}
+
+
+// 弹出加载框
+.weui-loading_toast.vux-loading{
+  .weui-mask_transparent
+  .weui-toast{
+    display flex
+    align-items center
+    flex-direction column
+    justify-content center
+    width rem(200)!important
+    height rem(200)!important
+    top:rem(320)!important
+    min-height rem(200)!important
+  }
+  .weui-loading.weui-icon_toast{
+    margin:0!important
+    width rem(60)!important
+    height rem(60)!important
+  }
+  .weui-toast__content{
+    margin: rem(27) 0 0 0!important
+    font-size:rem(28)!important
+
+  }
+}
+
+
+// toast
+.vux-toast{
+  .weui-toast.weui-toast_text{
+    max-width 35em!important
+    width auto!important
+  }
+  .weui-toast__content{
+    padding:rem(20)!important
+    font-size rem(28)
+    line-height rem(38)!important
+  }
+}
+
+// 地址
+.addAddress{
+  .weui-cells__title{
+    padding-top:.15rem
+    padding-bottom:.15rem
+    font-size:.4rem
+    margin-bottom:0.77em
+  }
+  .weui-label{
+    font-size:.4rem
+  }
+  .weui-cell__bd.weui-cell__primary{
+    font-size:.4rem
+  }
+  .vux-x-input.weui-cell{
+    padding-top:0.3rem
+    padding-bottom:0.3rem
+  }
+  .weui-btn{
+    font-size .4rem
+    line-height 2.33333333
+  }
+}
+
+// 时间选择
+.vux-datetime.weui-cell.weui-cell_access{
+  position absolute
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index 5
+  p{
+    display none
+  }
+  .weui-cell__ft.vux-cell-primary.vux-datetime-value{
+    display none
+  }
+}
+
+.dp-container{
+  .dp-header{
+    .dp-item{
+      font-size: rem(32)
+      height rem(70)
+      display flex
+      align-items center
+      &.dp-right{
+        justify-content flex-end
+      }
+    }
+  }
+  .scroller-component{
+    height rem(456)
+  }
+  .scroller-mask{
+    background-size: 100% rem(200);
+  }
+  .scroller-indicator{
+    height rem(68)
+    top: rem(204)
+  }
+  .scroller-item{
+    font-size: rem(38)
+    line-height rem(68)
+    height rem(68)
+  }
+}
+
+.fixed{
+  position fixed
+  top:0;
+  left:0;
+  right:0;
+  z-index 222;
+  width 0;
+  bottom:0;
+  padding:0 !important;
+  margin: 0 !important;
+  >div{
+    width rem(750)
+    height 100%
+    background #fff;
+    position relative
+  }
+}
+
+// 弹出框
+.popup{
+    position fixed 
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    z-index 99
+    transform scale(0)
+    transition all 0s linear 0.15s;
+    &.active{
+        transition all 0s linear;
+        transform scale(1)
+        .popup-bg{
+            opacity 1
+        }
+        .popup-div{
+            transform scale(1)
+            opacity 1;
+        }
+    }
+    .popup-bg{
+        position fixed
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index 1
+        background rgba(0,0,0,0.5)
+        transition all 0.15s linear
+        opacity 0
+    }
+    .popup-div{
+        position fixed
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index 2
+        flex-aj()
+        transform scale(0)
+        transition all 0.15s linear
+        opacity 0
+    }
+}
+     // 波纹特效
+.bth-ripple {
+            position: relative;
+        }
+        .bth-ripple:focus{
+            outline: none;
+        }
+        .bth-ripple:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            pointer-events: none;
+            background-color: #333;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            opacity: 0;
+            transition: all .3s;
+        }
+        .bth-ripple:active:after {
+            opacity: .3;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: 0s;
+        }        
+
+     
