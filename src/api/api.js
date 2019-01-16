@@ -386,6 +386,13 @@ api.http = async function (url, params,method='post') {
 api.getUserId = function () {
   return api.storage('user').user_id
 }
+api.getUserCard= function(){
+  let params = {
+    user_id: api.storage('userData').user_id, // 用户id
+		store_id: api.storage('deviceData').store_id // 门店id
+  }
+  return api.http('iot/card/get',params)
+}
 // 本地缓存封装
 api.storage = function (key, value) {
   if (value !== undefined) {

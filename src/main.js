@@ -9,6 +9,7 @@ import flexible from 'lib-flexible'
 import api from './api/api'
 import FastClick from 'fastclick'
 
+console.log(Vue.config,Vue.version)
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false

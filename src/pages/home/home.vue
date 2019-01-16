@@ -11,7 +11,7 @@
                     <p >{{unit||'币'}}：{{card.coin/100 || 0}}</p>
                     <!-- <p >{{store.mch_id=='zsdc'?'呱币':store.mch_id=='tyj'?'偶币':store.mch_id=='catchCu'?'咔咔币':'游戏币'}}：{{card.coin || 0}}</p> -->
                 </div>
-                <div class="buy" @click="isActive=true">
+                <div class="buy" @click="updateCard()">
                     <div>点击购币</div>
                 </div>
             </div>

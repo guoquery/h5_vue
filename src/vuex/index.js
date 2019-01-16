@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {UPDATE_CARD} from './mutation-types'
+import api from '../api/api'
 import {
   ToastPlugin,
   LoadingPlugin,
@@ -38,15 +40,6 @@ const store = new Vuex.Store({
       buttonColor: '#ffe14d', // 按钮主题颜色
       promptColor: '#e5b858', // 主题首页提示颜色
       compontent: [], // 引入主题的组件
-    },
-    upay: {
-      bgUrl: 'http://m.weimoke.com/decoder2.0/img/upay/', // 引用图片的路径
-      Color: 'rgba(14,186,70,1)',
-      Color2: 'rgba(14,186,70,0.5)',
-      shadowColor: 'rgba(254, 145, 117, 0.5)',
-      linearColor: '#ff997a',
-      buttonColor: '#fbb8bb', // 按钮主题颜色
-      compontent: [],
       device_type: [],
       device: {},
       card: {},
@@ -59,15 +52,34 @@ const store = new Vuex.Store({
       template: 'upay',
       detail: {},
       brand: '',
-      imgUrl: ''
+      imgUrl: '',
     }
   },
+  //getter
+  getters:{
+    card:state => {
+      console.log('getters card',state.iots.card)
+      return state.iots.card;
+    }
+
+  },
+  //改变状态的唯一方法 commit('someMutations')
   mutations: {
-    itemDetail(state, obj) {
-      state.upay.detail = obj;
-    },
-    brand_name(state, n) {
-      state.upay.brand = n
+    //更新会员卡
+    [UPDATE_CARD] (state,payload){
+      state.iots.card = { ...state.iots.card, ...payload }
+      console.log('mutations updateCard',state.iots.card)
+    }
+  },
+  //异步处理逻辑,最后提交 commit();
+  actions: {
+    /**
+     * 更新会员卡
+     * @param {*} param0 
+     */
+    async updateCard({ dispatch, commit }){
+      console.log('actions')
+      commit(UPDATE_CARD,await api.getUserCard())
     }
   }
 })
