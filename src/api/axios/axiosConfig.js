@@ -53,6 +53,7 @@ axios.interceptors.response.use(response => { //response 拦截器
     return response;
   } else if (errno === 2) { //token 过期
     //清空缓存，回到到首页重新授权
+    Vue.$vux.toast.text('tokenError')
     localStorage.clear();
     router.replace({
       path: '/',

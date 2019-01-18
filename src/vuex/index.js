@@ -40,6 +40,9 @@ const store = new Vuex.Store({
       buttonColor: '#ffe14d', // 按钮主题颜色
       promptColor: '#e5b858', // 主题首页提示颜色
       compontent: [], // 引入主题的组件
+      template:'default',
+      Color :'rgba(14,186,70,1)',
+      imgurl :'default',
       device_type: [],
       device: {},
       card: {},

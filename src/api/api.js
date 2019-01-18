@@ -283,7 +283,7 @@ function getAction(url, _postdata) {
       // API.HOST = 'http://113.107.7.82:8985/'
     }
   }
-  api.storage('access_token','4upayeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDc0MzM4MjkuOTk3LCJleHAiOjE1NDc2OTMwMjkuOTk3LCJpc3MiOiJ1cGF5IiwiaWQiOiJMTEJVTVVhZ0FBRTAiLCJ0eXBlIjoibWVtYmVyIn0.pdKN2HzGsChZ9xlRXrbqIfMCCMt5e15dXvdk_oVByPU')
+  api.storage('access_token','4upayeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDc3MTE5MTUuMDE3LCJleHAiOjE1NDc5NzExMTUuMDE3LCJpc3MiOiJ1cGF5IiwiaWQiOiJMTEJVTVVhZ0FBRTAiLCJzaW11bGF0ZV9sb2dpbiI6IkxMQlVNVWFnQUFFMCIsInR5cGUiOiJtZW1iZXIifQ.gQHPufmbKH2QkzJXzBijO0FPqSXpUMXftRhsrFWcrOU')
   var accessToken = api.storage('access_token') || 'token'
   // 时间戳
   var timestamp = Math.floor(new Date() / 1000)

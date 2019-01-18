@@ -43,7 +43,7 @@
                     <!-- <div style='position:fixed;top:0;left:0;width:60px;color:red' onclick='javascript:localStorage.clear()'>清除缓存</div> -->
                 </div>
    
-                <router-link :to="{path:'/upay/personal'}" class="gw_my" tag="div" >
+                <router-link :to="{path:'/personal'}" class="gw_my" tag="div" >
                     <svg class="icon"  >
                         <use xlink:href="#icon-gw_wode" ></use>
                     </svg>  
@@ -57,7 +57,7 @@
         </div> -->
         
         <!--充值弹出框-->        
-        <charge :isActive='isActive' @isClick="activeClick"></charge>
+        <charge :isActive='isActive' @isClick=""></charge>
     </div>
 </template>
 <script src='./home.js'></script>

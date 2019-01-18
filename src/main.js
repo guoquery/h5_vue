@@ -9,7 +9,7 @@ import flexible from 'lib-flexible'
 import api from './api/api'
 import FastClick from 'fastclick'
 
-console.log(Vue.config,Vue.version)
+console.log(Vue.config,Vue.version,'router',router,'store',store)
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false
@@ -32,7 +32,7 @@ new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount()
+});
 
 // new Vue({
 //   router,
